@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slide 2 - Kenangan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="slide-two" data-slide="2">
+  <header class="topbar page-shell">
+    <div class="brand">Birthday Iwan</div>
+    <div class="slide-chip">Slide 2 / 3</div>
+  </header>
+
+  <main class="page-shell slide-page slide-gallery-page">
+    <section class="panel slide-hero">
+      <span class="eyebrow">Happy Birthday Sayang</span>
+      <h1>About You</h1>
+      <p class="lead">Hari ini aku memilih lagu About You untukmu, karena setiap nadanya terasa seperti cerita kita — tentang rasa yang</p>
+      <p class="lead">diam-diam tumbuh, tentang kenangan yang selalu kembali, dan tentang kamu yang selalu ada di pikiranku.</p>
+      <p class="lead">Selamat ulang tahun sayang, semoga di setiap langkahmu kamu selalu ingat bahwa ada seseorang yang </p>
+      <p class="lead">menyayangimu dengan tulus, sama seperti lagu ini yang selalu mengingatkanku tentang kamu.</p>
+    </section>
+
+    <section class="panel memory-stage">
+      <div class="music-card">
+        <h2>Now Playing</h2>
+        <div class="spotify-player">
+          <div class="spotify-cover" aria-hidden="true"></div>
+          <div class="spotify-main">
+            <p class="music-title">About You</p>
+            <p class="spotify-artist">The 1975</p>
+            <div class="music-player-visual" aria-hidden="true">
+              <div class="equalizer-bars">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="spotify-progress" aria-hidden="true">
+              <span id="spotifyProgressBar"></span>
+            </div>
+            <div class="spotify-time">
+              <span id="musicCurrentTime">0:00</span>
+              <span id="musicDuration">0:00</span>
+            </div>
+          </div>
+        </div>
+        <p id="musicStatus" class="music-status">Siap diputar 🎵</p>
+        <audio id="aboutYouAudio" preload="metadata">
+          <source src="audio/The 1975 - About You (Official).mp3" type="audio/mpeg" />
+          Browser kamu belum mendukung audio player.
+        </audio>
+        <div class="button-row center-buttons slide-buttons music-controls">
+          <button id="playAboutYouBtn" class="primary-btn" type="button">▶ Putar</button>
+          <button id="pauseAboutYouBtn" class="ghost-btn" type="button">⏸ Jeda</button>
+        </div>
+      </div>
+
+      <section class="heart-gallery-stage" aria-label="Galeri berbentuk hati">
+        <h3 class="heart-gallery-title">My only love</h3>
+        <div class="heart-gallery-grid">
+          <figure class="heart-tile t1"><img src="img/1.jpeg" alt="Kenangan 1" loading="lazy"></figure>
+          <figure class="heart-tile t2"><img src="img/2.jpeg" alt="Kenangan 2" loading="lazy"></figure>
+          <figure class="heart-tile t3"><img src="img/3.jpeg" alt="Kenangan 3" loading="lazy"></figure>
+          <figure class="heart-tile t4"><img src="img/4.jpeg" alt="Kenangan 4" loading="lazy"></figure>
+          <figure class="heart-tile t5"><img src="img/5.jpeg" alt="Kenangan 5" loading="lazy"></figure>
+          <figure class="heart-tile t6"><img src="img/6.jpeg" alt="Kenangan 6" loading="lazy"></figure>
+          <figure class="heart-tile t7"><img src="img/7.jpeg" alt="Kenangan 7" loading="lazy"></figure>
+          <figure class="heart-tile t8"><img src="img/8.jpeg" alt="Kenangan 8" loading="lazy"></figure>
+          <figure class="heart-tile t9"><img src="img/9.jpeg" alt="Kenangan 9" loading="lazy"></figure>
+          <figure class="heart-tile t10"><img src="img/10.jpeg" alt="Kenangan 10" loading="lazy"></figure>
+          <figure class="heart-tile t11"><img src="img/11.jpeg" alt="Kenangan 11" loading="lazy"></figure>
+          <figure class="heart-tile t12"><img src="img/12.jpeg" alt="Kenangan 12" loading="lazy"></figure>
+          <figure class="heart-tile t13"><img src="img/13.jpeg" alt="Kenangan 13" loading="lazy"></figure>
+          <figure class="heart-tile t14"><img src="img/14.jpeg" alt="Kenangan 14" loading="lazy"></figure>
+          <figure class="heart-tile t15"><img src="img/15.jpeg" alt="Kenangan 15" loading="lazy"></figure>
+          <figure class="heart-tile t16"><img src="img/16.jpeg" alt="Kenangan 16" loading="lazy"></figure>
+          <figure class="heart-tile t17"><img src="img/17.jpeg" alt="Kenangan 17" loading="lazy"></figure>
+          <figure class="heart-tile t18"><img src="img/18.jpeg" alt="Kenangan 18" loading="lazy"></figure>
+          <figure class="heart-tile t19"><img src="img/19.jpeg" alt="Kenangan 19" loading="lazy"></figure>
+          <figure class="heart-tile t20"><img src="img/20.jpeg" alt="Kenangan 20" loading="lazy"></figure>
+          <figure class="heart-tile t21"><img src="img/21.jpeg" alt="Kenangan 21" loading="lazy"></figure>
+        </div>
+      </section>
+
+      <div class="love-note">
+        <h2>Ucapan Dari Aku Untuk Dia</h2>
+        <p id="galleryMessage">Kamu adalah bagian paling indah dari hari-hariku. Semoga cinta kita tetap lembut, kuat, dan penuh rasa syukur.</p>
+      </div>
+
+      <div class="nav-box slide-nav">
+        <p class="nav-title">Lanjutkan perjalanan</p>
+        <div class="button-row center-buttons slide-buttons">
+          <a class="ghost-btn" href="index.html">Balik bentar ya, sayang</a>
+          <a class="primary-btn" href="page3.html">Yuk lanjut lagi, sayang</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

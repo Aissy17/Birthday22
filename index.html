@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slide 1 - Pembuka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="slide-one page-intro" data-slide="1" data-page="1">
+  <header class="site-header page-shell">
+    <div class="brand">Birthday Iwan</div>
+    <div class="slide-chip">Slide 1 / 3</div>
+  </header>
+
+  <main class="page-shell intro-simple slide-one-page">
+    <div class="balloon-container" aria-hidden="true">
+      <div class="balloon balloon-1">🎈</div>
+      <div class="balloon balloon-2">💝</div>
+      <div class="balloon balloon-3">🎉</div>
+      <div class="balloon balloon-4">💖</div>
+    </div>
+
+    <section class="intro-core">
+      <h1>Selamat Ulang Tahun, Sayang</h1>
+      <p class="intro-subtitle">Perjalanan spesial dimulai dari sini.</p>
+
+      <div class="ldr-mini-card" aria-hidden="true">
+        <div class="ldr-mini-label">LDR Si Item ✈ Si Gembul</div>
+        <div class="ldr-mini-route">
+          <span class="ldr-mini-city ldr-left">
+            <span class="ldr-mini-pin">📍</span>
+            <span>Si Item</span>
+          </span>
+          <span class="ldr-mini-line">
+            <span class="ldr-mini-path">
+              <span class="route-seg seg-1"></span>
+              <span class="route-seg seg-2"></span>
+              <span class="route-seg seg-3"></span>
+              <span class="route-seg seg-4"></span>
+            </span>
+            <span class="ldr-mini-trail"></span>
+            <span class="ldr-mini-plane">✈️</span>
+          </span>
+          <span class="ldr-mini-city ldr-right">
+            <span class="ldr-mini-pin">📍</span>
+            <span>Si Gembul</span>
+          </span>
+        </div>
+        <p class="ldr-mini-note">Jaraknya jauh, tapi hatinya dekat dong hehehe...</p>
+      </div>
+
+      <div class="bucket-boy" aria-hidden="true">
+        <div class="bucket-container">
+          <img class="bucket-image" src="img/Bucket1.png" alt="Bucket animasi" />
+        </div>
+      </div>
+
+      <button class="cta-button" id="openGateBtn" type="button">Yuk lanjut, sayang</button>
+    </section>
+  </main>
+
+  <div class="gate-modal" id="gateModal" aria-hidden="true">
+    <div class="gate-backdrop" data-close-gate></div>
+    <section class="panel gate-card gate-modal-card" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+      <button class="gate-close" type="button" data-close-gate aria-label="Tutup">×</button>
+      <span class="eyebrow">Sebelum lanjut</span>
+      <h1 id="gateTitle">Kapan kita jadian ?</h1>
+      <p class="lead">Awas Aja G inget kmu ya...!!!</p>
+
+      <form id="passwordGateForm" class="gate-form" autocomplete="off">
+        <label class="gate-label" for="gatePassword">Password Ninu Ninu </label>
+        <input
+          id="gatePassword"
+          class="gate-input"
+          type="text"
+          inputmode="text"
+          placeholder="Contoh: 22 April 2026"
+          aria-describedby="gateHint"
+        />
+        <p id="gateHint" class="gate-hint">Kalau jawabannya benar, barulah lanjut ke perjalanan singkat berikutnya hehehe...</p>
+        <div class="button-row center-buttons gate-actions">
+          <button class="primary-btn" type="submit">Buka Slide 2</button>
+          <button class="ghost-btn" type="button" data-close-gate>Batal</button>
+        </div>
+      </form>
+
+      <p id="gateResult" class="gate-result" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <div class="floating-hearts" aria-hidden="true">
+    <span>💗</span><span>💝</span><span>💞</span><span>💘</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

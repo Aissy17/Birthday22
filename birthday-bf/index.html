@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love ❤️</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container py-4 page-shell">
+        <section id="start-screen" class="start-screen text-center">
+            <h1 class="title mb-2">Klik Bucket Dulu 💖</h1>
+            <p class="subtitle mb-1">Habis tu baru lanjut ke halaman specialnya hehehe...</p>
+            <p class="subtitle mb-1">Maaf ya sayang desain webnya ngasal karna buru-buru hehehe.... 🙏🙏</p>
+            <button id="openBtn" class="bucket-button" aria-label="Buka halaman spesial">
+                <img src="../birthday-bf/img/Bucket1.png" alt="Foto Bucket" class="bucket-photo">
+            </button>
+        </section>
+
+        <section id="special-page" class="special-page hidden justify-content-center">
+            <div class="right-panel card border-0">
+                <div class="sparkles" aria-hidden="true">
+                    <span>✨</span>
+                    <span>💖</span>
+                    <span>✨</span>
+                </div>
+
+                <p class="special-reminder">Ingat kan, Bulan ini ada 2 hari spesial ? 💖</p>
+                <div class="calendar-header">
+                    <h2>April 2026</h2>
+                    <!-- <p class="calendar-subtitle">Hari paling istimewa: 22 Maret 2026</p> -->
+                </div>
+
+                <div class="memory-card">
+                    <p>Happy Anivv ke 1 sayanggg dan ya pastinya tdk lupa dg hari sepecial mu itu 
+                       Selamat Ulang Tahun Sayangkuuu Semoga dilancarkan segala hal baik yg kmu lakukan 
+                       dan yg pasti dilancarkan rejekimu hehehe.... biar bs jajanin aku wkwkwk bercandaa ay 🌷
+
+                       KLIK TANGGALNYA YAK BIAR TAU ISINYA HEHEHE....WLEEE JANGAN LUPAAA DI KLIK SATU-SATU!!!
+                    </p>
+                </div>
+
+                <div id="flightHint" class="flight-hint" aria-hidden="true">
+                        <img src="../birthday-bf/img/Bulet.png" alt="" class="plane-icon plane-image">
+                    <span class="boom-icon">💥</span>
+                </div>
+
+                <div id="coupleFlightHint" class="couple-flight-hint" aria-hidden="true">
+                    <img src="../birthday-bf/img/Bulet1.jpeg" alt="" class="couple-flyer">
+                    <div class="couple-shatter">
+                        <span class="piece"></span><span class="piece"></span><span class="piece"></span><span class="piece"></span>
+                        <span class="piece"></span><span class="piece"></span><span class="piece"></span><span class="piece"></span>
+                    </div>
+                </div>
+
+                <div class="calendar">
+                    <div class="day-name">Min</div>
+                    <div class="day-name">Sen</div>
+                    <div class="day-name">Sel</div>
+                    <div class="day-name">Rab</div>
+                    <div class="day-name">Kam</div>
+                    <div class="day-name">Jum</div>
+                    <div class="day-name">Sab</div>
+
+                    <div class="day empty"></div>
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <button type="button" class="day couple-day" id="coupleDayBtn">9 💞</button>
+                    <div class="day">10</div>
+                    <div class="day">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+
+                    <div class="day">14</div>
+                    <div class="day">15</div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+
+                    <div class="day">21</div>
+                    <button type="button" class="day highlight special-day" id="specialDayBtn">22 💖</button>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26</div>
+                    <div class="day">27</div>
+
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                    <div class="day">30</div>
+                    <div class="day">31</div>
+                </div>
+                <!-- <p class="date-note mb-0">Tanggal spesial: <strong>22 Maret 2026</strong> ✨</p> -->
+            </div>
+        </section>
+
+        <div id="songModal" class="song-modal hidden" aria-hidden="true">
+            <section class="panel memory-stage mx-auto">
+                <div class="music-card card border-0">
+                    <button id="closeSongModal" class="close-song" aria-label="Tutup">×</button>
+                    <h2>For you</h2>
+                    <div class="spotify-player">
+                        <div class="spotify-cover" aria-hidden="true">
+                            <img src="../birthday-bf/img/19.jpeg" alt="Foto spesial" class="spotify-cover-image">
+                        </div>
+                        <div class="spotify-main">
+                            <p class="music-title">About You</p>
+                            <p class="spotify-artist">The 1975</p>
+                            <div class="music-player-visual" aria-hidden="true">
+                                <div class="equalizer-bars">
+                                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                                </div>
+                            </div>
+                            <div class="spotify-progress" aria-hidden="true">
+                                <span id="spotifyProgressBar"></span>
+                            </div>
+                            <div class="spotify-time">
+                                <span id="musicCurrentTime">0:00</span>
+                                <span id="musicDuration">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="musicStatus" class="music-status">Siap diputar 🎵</p>
+                    <audio id="aboutYouAudio" preload="metadata">
+                        <source src="../birthday-bf/audio/The 1975 - About You (Official).mp3" type="audio/mpeg" />
+                        Browser kamu belum mendukung audio player.
+                    </audio>
+                    <div class="button-row center-buttons slide-buttons music-controls d-grid gap-2 d-md-flex">
+                        <button id="playAboutYouBtn" class="primary-btn btn btn-success flex-fill" type="button">▶ Putar</button>
+                        <button id="pauseAboutYouBtn" class="ghost-btn btn btn-outline-light flex-fill" type="button">⏸ Jeda</button>
+                    </div>
+                </div>
+
+                <div class="wish-message music-message card border-0">
+                    <h4>Harapan dan doa dari aku</h4>
+                    <p>
+                        Happy Birthday Sayang 💖
+                        Cie dah 22 tahun ni g kerasa kan dah dewasa dah kepala dua hehehe...
+                        Tahun kedua ngerayain bareng ni ultahnya meskipun g face to face ya...
+                        tpi seenggaknya doaku menyertaimu ay, semoga di tahun ini apa yg kmu 
+                        cita-citakan tercapai secepatnya, rajin-rajin kuliahnya jangan mls" an
+                        udah terlanjur terjun msk mau berhenti di pertengahan jalan ? kan enggak 
+                        bisa yok bisa msk ngelewati ujian dri kecil sampai segini besarnya g bs
+                        nyelesein kuliahnya, ayo lah bisa pasti tk tunggu Gelar Sarjananya biar 
+                        sama-sama jadi lulusan sarjana hehehe....
+                        semangat kerjane katane mau bikin usaha sendiri, buktiin dong kalau kmu 
+                        bisaaaa, tpi aku sih yakin kmu pasti bisaaa buktiin karna kmu selalu nepatin
+                        omonganmu meskipun agak terlambat dikit hehehe bercanda ay jangan masukin hati
+                        ya hehehe... aku nya aja masukin hatimu hehehe....
+                        jangan berhenti olahraga yak inget katane mau hidup sehat, katane mau sehat 
+                        biar waktu naik gunung g cape biar terbiasa, makanya kurangin lah itu rokoknya,
+                        sama jangan suka begadang, apalagi suka minum kopi inget badanmu karna kmu dah
+                        lama mengonsumsi rokok, boleh aja karna mungkin itu penghilang stress mu dikala
+                        lagi mumet-mumetnya entah karna kerjaan, keluarga, temen, atau apapun itu yg 
+                        membuatmu mumet kemungkinan aku juga termasuk yg membuatmu mumet iyh kan ay ? 
+                        inget juga pesenku sholatnya dijaga ya meskipun magrib aja subuh aja dhuhur aja
+                        isyak aja ashar aja gpp lah yg penting jangan ditinggal semua sholatnya namanya 
+                        jga belajar kan harus pelan-pelan untuk jadi terbiasa. sma sih aku jga akhir" ini
+                        agak ninggal karna cape sih kyk udh cape di kampus naik turun temuin ini itu akhirnya
+                        ya sudah tertinggal lah sholat ku hehehe....
+                        pkok sekali lagi sehat-sehat sayangkuuu....
+                        bahagia selalu, kalau ada apa" ceritaa jangan sampai aku denger kmu melontarkan
+                        kalimat "laki-laki tidak bercerita" tk samplok ndasmu wkwkwk kro tk comot lambemu 
+                        ben kapok ra dibaleni neh... pkok kwi lah penting sehat hehehe...
+                        kira-kira kmu dateng g waktu wisuda/sidang skripsi ? sambil berharap wkkwk tpi 
+                        g berharap banyak karna aku tau kmu sibuk kerja hari weekdays dan weekend kmu jga 
+                        kuliah g ada waktu hehehe... bercanda ya ay wkwkkw
+                        ya udh g yapping lagi selesai takut kebanyakan mls baca kmu nya ay hehehe....
+                        sekali lagi Barrakallah Fii Umrik Sayangku Cintakuuuuu Duniakuuuu yg keduaaa 
+                        Semestakuuu yg kedua apalagi yaa?? oh gantengkuuuu maniskuuuuu eaaaa saltingg 
+                        ngantii salto salto iki mesti wkwkwk heheheh 💖
+                        bye bye sekian dari pacarmu yg gembul ini hehehe..... lop yuuuuu seduniaaa 💖
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <div id="coupleModal" class="song-modal hidden" aria-hidden="true">
+            <section class="panel memory-stage mx-auto">
+                <div class="music-card card border-0">
+                    <button id="closeCoupleModal" class="close-song" aria-label="Tutup">×</button>
+                    <h2>Halaman Spesial Kita Berdua EAKKK...💑</h2>
+                    <div class="wish-message music-message card border-0">
+                        <h4>Untuk kita berdua</h4>
+                        <p>
+                            Cie-cie dah satu taun aja nii...padahal dulu g ada pdktan
+                            g tau cerita masing-masing tbtb aja pacaran kan org" kaget hehehe
+                            mungkin ya dulunya kita sma" sebatas rasa nyaman utk mulai
+                            hubungan ini tpi ternyata dri rasa nyaman itu tumbuh rasa sayang eakk
+                            sayang banget malah sekarang g tau knp kyk g mau ada yg dekt sma kmu 
+                            selain aku. makin sayang makin percaya mlh makin takut, makin cemburu,
+                            makin makin dah g bs diungkapin heheheh ya maap yak....
+                            Terima kasih sudah melewati 1 tahun ini dengan perbedaan 
+                            pendapat yg banyak tpi tetep bertahan sampai detik ini. 
+                            Mksi juga untuk usaha-usaha yg kmu lakukan ay, thanks untuk setaunnya hehehe.....
+                            maaf kalau aku blm bisa jadi yg kmu harapkan, mungkin ae
+                            aku bagimu terlalu manja, terlalu dramatis, terlalu banyak 
+                            hal yg terlalu berlebihan untuk aku tanggapi, meskipun kmu 
+                            sabar tpi ada kalanya kmu ngomong kyk kemarin antara aku 
+                            karna kmu udh mulai aja ngungkapin perasaanmu bkn hanya aku 
+                            aja yg ungkapin, tpi secara g langsung kmu mulai dikit" ngungkapin
+                            perasaanmu sendiri dan secara g langsung kmu negur secara halus 
+                            jadi aku paham, jadi maafin aku yaaaa sayang...
+                            Sebenere aku g tau kadang mau bilang makasi seprti apa ke kmu
+                            mungkin di mata orang lain kmu cowo yg brengsek, nakal, dan g jls
+                            dan banyak juga yg mengharapkan aku utk putus g ush deket sma kmu 
+                            tpi entah knp aku cuma jwb ya udh itu dah pilihanku. ya mungkin
+                            kmu belum bs menjalin hubungan romance tpi kmu mungkin berusaha 
+                            dg caramu sendiri tanpa kmu sadari entah kirim gift, makan dan lain-lain
+                            untuk kita berdua hebat sii meskipun banyak masalah tpi tetep masih saling 
+                            memaafkan mungkin soal komunikasi kita kurang. semoga kita sama-sama
+                            saling memaafkan terus dan saling bareng terus saling jaga saling setia satu
+                            sama lain meskipun ada jarak dan ada kalanya kita bosen semoga tdk cari 
+                            kenyamanan ke orang lain masing-masing dan komunikasinya semoga makin 
+                            baik kedepannya. Love You sayang 💖
+                        </p>
+                    </div>
+
+                    <div class="photo-gallery card border-0">
+                        <h4>Foto Kenangan Kita - Tanggal 9</h4>
+                        <div class="gallery-grid">
+                            <figure class="gallery-item">
+                                <img src="../birthday-bf/img/1.jpeg" alt="Kenangan kita tanggal 05 April 2026">
+                                <figcaption>03 April 2025</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="../birthday-bf/img/3.jpeg" alt="Kenangan kita tanggal 06 April 2026">
+                                <figcaption>13 April 2025</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="../birthday-bf/img/4.jpeg" alt="Kenangan kita tanggal 07 April 2026">
+                                <figcaption>07 September 2025</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="../birthday-bf/img/2.jpeg" alt="Kenangan kita tanggal 08 April 2026">
+                                <figcaption>24 November 2025</figcaption>
+                            </figure>
+                            <figure class="gallery-item">
+                                <img src="../birthday-bf/img/5.jpeg" alt="Kenangan kita tanggal 09 April 2026">
+                                <figcaption>25 Maret 2026</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="footer text-center">
+            <p>Mbul❤️</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

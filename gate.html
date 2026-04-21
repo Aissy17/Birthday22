@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kunci Akses - Slide 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-gate" data-page="gate">
+  <header class="topbar page-shell">
+    <div class="brand">Birthday Iwan</div>
+    <div class="slide-chip">Kunci Slide 2</div>
+  </header>
+
+  <main class="page-shell gate-page">
+    <section class="panel gate-card">
+      <span class="eyebrow">Sebelum lanjut</span>
+      <h1>Kapan kita jadian?</h1>
+      <p class="lead">Jawab pelan-pelan ya sayang, biar bisa lanjut ke slide 2.</p>
+
+      <form id="passwordGateForm" class="gate-form" autocomplete="off">
+        <label class="gate-label" for="gatePassword">Masukkan password</label>
+        <input
+          id="gatePassword"
+          class="gate-input"
+          type="text"
+          inputmode="text"
+          placeholder="Contoh: 9 maret 2025"
+          aria-describedby="gateHint"
+        />
+        <p id="gateHint" class="gate-hint">Kalau jawabannya benar, kamu bakal langsung masuk ke slide 2.</p>
+        <div class="button-row center-buttons gate-actions">
+          <button class="primary-btn" type="submit">Buka Slide 2</button>
+          <a class="ghost-btn" href="index.html">Balik ke Slide 1</a>
+        </div>
+      </form>
+
+      <p id="gateResult" class="gate-result" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

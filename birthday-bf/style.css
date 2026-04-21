@@ -1,0 +1,966 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-a: #081624;
+    --bg-b: #0f2942;
+    --bg-c: #1a446d;
+    --panel-bg: rgba(12, 24, 39, 0.9);
+    --line-soft: rgba(154, 188, 224, 0.24);
+    --card-shadow: 0 24px 60px rgba(7, 18, 33, 0.4);
+
+    --text-light: #f2f7ff;
+    --text-soft: #c5d8f1;
+    --text-primary: #e8f1ff;
+    --text-secondary: #c5d7f0;
+
+    --box-bg: linear-gradient(140deg, rgba(235, 243, 252, 0.97), rgba(221, 234, 248, 0.97));
+    --box-border: rgba(120, 157, 196, 0.28);
+    --box-text: #102a43;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.07), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(116, 162, 212, 0.18), transparent 30%),
+        linear-gradient(135deg, var(--bg-a) 0%, var(--bg-b) 55%, var(--bg-c) 100%);
+}
+
+.page-shell {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 28px 22px 24px;
+}
+
+.page-shell :is(h1, h2, h3, h4, h5, h6, p, figcaption, span) {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.title {
+    text-align: center !important;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    text-shadow: 0 10px 28px rgba(8, 19, 36, 0.5);
+}
+
+.subtitle {
+    text-align: center !important;
+    font-size: 1.03rem;
+    color: var(--text-soft);
+    letter-spacing: 0.02em;
+}
+
+.start-screen {
+    min-height: 84vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.bucket-button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.bucket-photo {
+    width: min(320px, 82vw);
+    border-radius: 26px;
+    transition: transform 0.25s ease, filter 0.25s ease;
+    animation: bucketFloat 3.4s ease-in-out infinite, bucketGlow 2.4s ease-in-out infinite;
+    filter: drop-shadow(0 16px 28px rgba(8, 20, 39, 0.4));
+    display: block;
+}
+
+.bucket-photo:hover {
+    transform: scale(1.045) rotate(-1.2deg);
+    filter: drop-shadow(0 20px 34px rgba(8, 20, 39, 0.5));
+}
+
+.bucket-button::after {
+    content: none;
+}
+
+.bucket-button.opening .bucket-photo {
+    animation: bucketOpen 0.45s ease forwards;
+}
+
+.special-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.45s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.right-panel {
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    overflow: hidden;
+    padding: 22px;
+    border-radius: 26px;
+    border: 1px solid var(--line-soft);
+    background: var(--panel-bg);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--card-shadow);
+}
+
+.right-panel.card {
+    background-clip: padding-box;
+}
+
+.right-panel h2 {
+    margin-bottom: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.special-reminder {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.02rem;
+}
+
+.calendar-header {
+    margin-bottom: 14px;
+}
+
+.calendar-subtitle {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.memory-card {
+    margin-bottom: 16px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    border: 1px solid var(--box-border);
+    background: var(--box-bg);
+    color: var(--box-text);
+    line-height: 1.7;
+    box-shadow: 0 10px 22px rgba(5, 16, 30, 0.2);
+}
+
+.sparkles {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    display: flex;
+    gap: 4px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.sparkles span {
+    animation: twinkle 1.8s ease-in-out infinite;
+}
+
+.sparkles span:nth-child(2) {
+    animation-delay: 0.35s;
+}
+
+.sparkles span:nth-child(3) {
+    animation-delay: 0.7s;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 9px;
+}
+
+.flight-hint {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 6;
+    --plane-target-x: 80%;
+    --plane-target-y: 58%;
+    --boom-left: 80%;
+    --boom-top: 58%;
+}
+
+.plane-icon,
+.boom-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.plane-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.28));
+}
+
+.boom-icon {
+    left: var(--boom-left);
+    top: var(--boom-top);
+    font-size: 5rem;
+    line-height: 1;
+    transform-origin: center center;
+    transform: scale(0.2);
+}
+
+.flight-hint.launch .plane-icon {
+    animation: planeDive 2.2s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.flight-hint.launch .boom-icon {
+    animation: boomBurst 0.65s ease-out 2.05s forwards;
+}
+
+.flight-hint.done {
+    display: none;
+}
+
+.couple-flight-hint {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 6;
+    --c-target-x: 24%;
+    --c-target-y: 52%;
+    --flyer-half: 30px;
+    --piece-half: 4.5px;
+}
+
+.couple-flyer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: #fff;
+    opacity: 0;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
+}
+
+.couple-shatter .piece {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(calc(var(--c-target-x) - var(--piece-half)), calc(var(--c-target-y) - var(--piece-half))) scale(0.2);
+    background: radial-gradient(circle at 35% 35%, #f0d8ff, #8d44cf 60%, #4b236f);
+    box-shadow: 0 0 6px rgba(75, 35, 111, 0.45);
+}
+
+.couple-flight-hint.launch .couple-flyer {
+    animation: coupleDive 4s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.couple-flight-hint.launch .piece {
+    animation: pieceBurst 1.35s ease-out 3.35s forwards;
+}
+
+.couple-shatter .piece:nth-child(1) { --dx: -30px; --dy: -24px; }
+.couple-shatter .piece:nth-child(2) { --dx: -14px; --dy: -34px; }
+.couple-shatter .piece:nth-child(3) { --dx: 8px; --dy: -30px; }
+.couple-shatter .piece:nth-child(4) { --dx: 28px; --dy: -18px; }
+.couple-shatter .piece:nth-child(5) { --dx: 34px; --dy: 8px; }
+.couple-shatter .piece:nth-child(6) { --dx: 12px; --dy: 26px; }
+.couple-shatter .piece:nth-child(7) { --dx: -12px; --dy: 28px; }
+.couple-shatter .piece:nth-child(8) { --dx: -32px; --dy: 10px; }
+
+.couple-flight-hint.done {
+    display: none;
+}
+
+.day-name,
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    border-radius: 12px;
+    font-size: 0.98rem;
+    font-weight: 600;
+}
+
+.day-name {
+    color: #f2f8ff;
+    background: linear-gradient(135deg, #1a4f86, #2e75bc);
+    box-shadow: 0 6px 16px rgba(24, 74, 132, 0.35);
+}
+
+.day {
+    background: #153657;
+    color: #ecf5ff;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.day:not(.empty):not(.highlight):not(.couple-day):hover {
+    transform: translateY(-3px);
+    background: #1c456e;
+    box-shadow: 0 8px 18px rgba(14, 32, 52, 0.35);
+}
+
+.day.empty {
+    background: transparent;
+}
+
+.day.highlight {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: #fff;
+    background: linear-gradient(135deg, #2f8ef2 0%, #56abff 100%);
+    box-shadow: 0 12px 22px rgba(45, 133, 230, 0.4);
+    animation: heartbeatDate 1.4s ease-in-out infinite;
+    position: relative;
+}
+
+.day.couple-day {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    color: #fff;
+    background: linear-gradient(135deg, #1267cb 0%, #3388e8 100%);
+    box-shadow: 0 10px 18px rgba(15, 94, 192, 0.35);
+}
+
+.day.couple-day:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 22px rgba(15, 94, 192, 0.45);
+}
+
+.date-note {
+    margin-top: 14px;
+    color: var(--text-secondary);
+    font-weight: 700;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 14px;
+    color: var(--text-secondary);
+}
+
+.footer p {
+    text-align: center !important;
+}
+
+.song-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(4, 12, 22, 0.82);
+}
+
+.song-modal.hidden {
+    display: none;
+}
+
+.memory-stage {
+    width: min(720px, 100%);
+}
+
+.music-card {
+    position: relative;
+    width: 100%;
+    padding: 26px;
+    border-radius: 30px;
+    color: var(--text-primary);
+    background: var(--panel-bg);
+    border: 1px solid var(--line-soft);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.48);
+}
+
+.music-card.card,
+.wish-message.card,
+.photo-gallery.card {
+    background-clip: padding-box;
+}
+
+.music-card h2 {
+    margin-bottom: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.95rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.close-song {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 1.4rem;
+}
+
+.spotify-player {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 14px;
+    align-items: start;
+}
+
+.spotify-cover {
+    width: 96px;
+    height: 96px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.spotify-cover-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.spotify-main {
+    min-width: 0;
+}
+
+.music-title {
+    margin-bottom: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.52rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--text-primary);
+}
+
+.spotify-artist {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.music-player-visual {
+    margin-bottom: 10px;
+}
+
+.equalizer-bars {
+    display: flex;
+    align-items: end;
+    gap: 4px;
+    height: 20px;
+}
+
+.equalizer-bars span {
+    width: 4px;
+    border-radius: 999px;
+    background: #56abff;
+    animation: eqPulse 1s ease-in-out infinite;
+}
+
+.equalizer-bars span:nth-child(1) { height: 8px; animation-delay: 0s; }
+.equalizer-bars span:nth-child(2) { height: 14px; animation-delay: 0.08s; }
+.equalizer-bars span:nth-child(3) { height: 10px; animation-delay: 0.16s; }
+.equalizer-bars span:nth-child(4) { height: 16px; animation-delay: 0.24s; }
+.equalizer-bars span:nth-child(5) { height: 11px; animation-delay: 0.32s; }
+.equalizer-bars span:nth-child(6) { height: 7px; animation-delay: 0.4s; }
+
+.spotify-progress {
+    height: 6px;
+    margin-bottom: 6px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(201, 220, 244, 0.35);
+}
+
+.spotify-progress span {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: 999px;
+    background: #7ec0ff;
+}
+
+.spotify-time {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.music-status {
+    margin: 14px 0 14px;
+    color: var(--text-secondary);
+    font-size: 0.98rem;
+    font-weight: 600;
+}
+
+.music-card audio {
+    display: none;
+}
+
+.button-row {
+    display: flex;
+    gap: 12px;
+}
+
+.center-buttons {
+    margin-top: 12px;
+}
+
+.music-controls .primary-btn,
+.music-controls .ghost-btn {
+    flex: 1;
+    min-height: 48px;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 800;
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.music-controls.d-md-flex {
+    align-items: stretch;
+}
+
+.music-controls .primary-btn {
+    color: #071624;
+    background: linear-gradient(90deg, #2f8ef2 0%, #56abff 100%);
+    box-shadow: 0 10px 22px rgba(47, 142, 242, 0.34);
+}
+
+.music-controls .ghost-btn {
+    color: #ebf4ff;
+    background: transparent;
+    border: 2px solid rgba(183, 210, 240, 0.78);
+    backdrop-filter: blur(8px);
+}
+
+.music-controls .primary-btn:hover,
+.music-controls .ghost-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+.music-controls .primary-btn:active,
+.music-controls .ghost-btn:active {
+    transform: translateY(0);
+}
+
+.music-message {
+    margin-top: 16px;
+}
+
+.wish-message,
+.lyric-message,
+.photo-gallery {
+    border: 1px solid var(--box-border);
+    background: var(--box-bg);
+    border-radius: 20px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    color: var(--box-text);
+}
+
+.wish-message {
+    padding: 18px;
+    line-height: 1.85;
+    text-align: left;
+}
+
+.wish-message h4,
+.lyric-message h4,
+.photo-gallery h4 {
+    margin-bottom: 10px;
+    color: var(--box-text);
+    font-size: 1.1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wish-message p,
+.lyric-message p {
+    color: var(--box-text);
+    font-size: 1rem;
+}
+
+.lyric-message {
+    margin-top: 14px;
+    padding: 18px;
+    line-height: 1.7;
+}
+
+.photo-gallery {
+    margin-top: 16px;
+    padding: 16px;
+}
+
+.photo-gallery h4 {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.gallery-item {
+    margin: 0;
+    overflow: visible;
+    border-radius: 6px;
+    background: #f4f8ff;
+    border: 1px solid rgba(103, 137, 174, 0.3);
+    padding: 10px 10px 14px;
+    box-shadow: 0 12px 22px rgba(5, 16, 30, 0.28);
+    transform: rotate(-1.1deg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-item:nth-child(even) {
+    transform: rotate(1.1deg);
+}
+
+.gallery-item:hover {
+    transform: rotate(0deg) translateY(-2px);
+    box-shadow: 0 16px 28px rgba(5, 16, 30, 0.34);
+}
+
+.gallery-item img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    display: block;
+    object-fit: contain;
+    background: #dfeaf8;
+    border: 1px solid rgba(90, 121, 154, 0.28);
+}
+
+.gallery-item figcaption {
+    padding: 10px 6px 2px;
+    text-align: center !important;
+    color: #16324f;
+    font-size: 0.83rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.wish-message h4,
+.lyric-message h4,
+.calendar-subtitle,
+.special-reminder,
+.date-note,
+.spotify-artist,
+.music-status {
+    letter-spacing: 0.01em;
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.75);
+    outline-offset: 3px;
+}
+
+:is(#songModal, #coupleModal) {
+    align-items: flex-start;
+    overflow-y: auto;
+}
+
+:is(#songModal, #coupleModal) .memory-stage {
+    margin: 24px auto;
+}
+
+:is(#songModal, #coupleModal) .music-card {
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+    .page-shell {
+        padding: 22px 16px 20px;
+    }
+
+    .special-page {
+        align-items: stretch;
+    }
+
+    .right-panel {
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .calendar {
+        gap: 7px;
+    }
+
+    .day-name,
+    .day {
+        min-height: 40px;
+        font-size: 0.88rem;
+    }
+
+    .memory-stage {
+        width: 100%;
+    }
+
+    .music-card {
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .spotify-player {
+        grid-template-columns: 84px 1fr;
+    }
+
+    .spotify-cover {
+        width: 84px;
+        height: 84px;
+        border-radius: 16px;
+    }
+
+    .music-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .music-title {
+        font-size: 1.34rem;
+    }
+
+    .music-controls {
+        flex-direction: column;
+    }
+
+    .music-controls .primary-btn,
+    .music-controls .ghost-btn {
+        width: 100%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item,
+    .gallery-item:nth-child(even),
+    .gallery-item:hover {
+        transform: none;
+    }
+
+    :is(#songModal, #coupleModal) {
+        padding: 12px;
+    }
+
+    :is(#songModal, #coupleModal) .memory-stage {
+        margin: 12px auto;
+    }
+
+    :is(#songModal, #coupleModal) .music-card {
+        max-height: calc(100vh - 24px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bucketFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bucketGlow {
+    0%,
+    100% {
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+    }
+    50% {
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.45));
+    }
+}
+
+@keyframes bucketOpen {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1) rotate(-2deg);
+    }
+    100% {
+        transform: scale(0.96);
+    }
+}
+
+@keyframes heartbeatDate {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+@keyframes planeDive {
+    0% {
+        opacity: 0;
+        transform: translate(-80px, -24px) rotate(8deg) scale(0.9);
+    }
+    12% {
+        opacity: 1;
+    }
+    55% {
+        transform: translate(calc(var(--plane-target-x) * 0.45), calc(var(--plane-target-y) * 0.18)) rotate(-3deg) scale(1);
+    }
+    82% {
+        transform: translate(calc(var(--plane-target-x) - 30px), calc(var(--plane-target-y) - 76px)) rotate(24deg) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(var(--plane-target-x), var(--plane-target-y)) rotate(58deg) scale(0.92);
+    }
+}
+
+@keyframes boomBurst {
+    0% {
+        opacity: 0;
+        transform: scale(0.2);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.8);
+    }
+}
+
+@keyframes coupleDive {
+    0% {
+        opacity: 0;
+        transform: translate(120%, -24px) rotate(-18deg) scale(0.9);
+    }
+    12% {
+        opacity: 1;
+    }
+    70% {
+        transform: translate(calc(var(--c-target-x) + 28px), calc(var(--c-target-y) - 56px)) rotate(-22deg) scale(1);
+    }
+    86% {
+        opacity: 1;
+        transform: translate(calc(var(--c-target-x) - 8px), calc(var(--c-target-y) - 10px)) rotate(-38deg) scale(0.96);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(var(--c-target-x) - var(--flyer-half)), calc(var(--c-target-y) - var(--flyer-half))) rotate(-48deg) scale(0.88);
+    }
+}
+
+@keyframes pieceBurst {
+    0% {
+        opacity: 0;
+        transform: translate(calc(var(--c-target-x) - var(--piece-half)), calc(var(--c-target-y) - var(--piece-half))) scale(0.2);
+    }
+    25% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(var(--c-target-x) + var(--dx) - var(--piece-half)), calc(var(--c-target-y) + var(--dy) - var(--piece-half))) scale(1.15);
+    }
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-2px) scale(1.15);
+        opacity: 1;
+    }
+}
+
+@keyframes eqPulse {
+    0%,
+    100% {
+        transform: scaleY(0.7);
+        opacity: 0.75;
+    }
+    50% {
+        transform: scaleY(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes fallHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(92vh) rotate(360deg);
+        opacity: 0;
+    }
+}
